@@ -1,17 +1,17 @@
 import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import { WalletProvider } from "@/components/providers/wallet-provider"
 import { Toaster } from "@/components/ui/toaster"
+import Header from "@/components/layout/header"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "AptosCopy | AI-Powered Copy Trading",
+  title: "AptoTrade | AI-Powered Copy Trading",
   description: "Copy trade top performers on the Aptos blockchain with AI-powered insights",
-    generator: 'v0.dev'
+  
 }
 
 export default function RootLayout({
@@ -34,7 +34,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

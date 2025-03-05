@@ -8,10 +8,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
-import { useToast } from "@/components/ui/use-toast"
-import { CheckCircle2, InfoIcon, Lock } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { useToast } from "@/components/ui/use-toast"
+import { CheckCircle2, Lock, InfoIcon } from "lucide-react" // Add InfoIcon here
+import { Badge } from "@/components/ui/badge"
 
 export default function CopyTradeSetupPage() {
   const params = useParams()
@@ -35,26 +35,53 @@ export default function CopyTradeSetupPage() {
     totalTrades: 172,
   }
 
-  const handleSubmit = () => {
-    // Show confirmation toast
-    toast({
-      title: "Copy Trade Confirmed!",
-      description: `You are now copying ${trader.name} with $${investmentAmount}`,
-      action: (
-        <Button variant="outline" size="sm" onClick={() => router.push("/my-trades")}>
-          View My Trades
-        </Button>
-      ),
-    })
+  const handleSubmit = async () => {
+    try {
+      if (!window.aptos) {
+        throw new Error("Wallet not connected");
+      }
 
-    // Redirect to tracking page
-    router.push("/my-trades")
-  }
+      // Define the transaction
+      const transaction = {
+        type: "entry_function_payload",
+        function: "0x1::coin::transfer",
+        type_arguments: ["0x1::aptos_coin::AptosCoin"],
+        arguments: [
+          "0x43dd97fc121243763441a5d492711e6169045ececf0ca0596692ce6c1d8f9f57", // recipient address
+          "20000000" // amount in micro APT (0.02 APT)
+        ]
+      };
+
+      // Sign and submit the transaction
+      const response = await window.aptos.signAndSubmitTransaction(transaction);
+
+      // Show confirmation toast
+      toast({
+        title: "Transaction Submitted!",
+        description: `Transaction hash: ${response.hash}`,
+        action: (
+          <Button variant="outline" size="sm" onClick={() => router.push("/my-trades")}>
+            View My Trades
+          </Button>
+        ),
+      });
+
+      // Redirect to tracking page
+      router.push("/my-trades");
+    } catch (error) {
+      console.error("Failed to submit transaction:", error);
+      toast({
+        title: "Transaction Failed",
+        description: "Could not submit the transaction. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <div className="container px-4 md:px-6 py-10">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Set Up Copy Trading</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">Set Up Copy Trading on AptoTrade</h1>
 
         <Alert className="mb-8">
           <InfoIcon className="h-4 w-4" />

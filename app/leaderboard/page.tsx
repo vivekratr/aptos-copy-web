@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function LeaderboardPage() {
   return (
     <div className="container px-4 md:px-6 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6">Trader Leaderboard</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-6">AptoTrade Leaderboard</h1>
       <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
         Discover the top-performing traders on our platform. Filter by risk level, asset type, and time frame to find
         the perfect match for your trading style.
