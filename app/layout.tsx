@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" /> 
+      </head>
       <body className={inter.className}>
         <WalletProvider>
           <div className="flex min-h-screen flex-col">
@@ -32,5 +35,5 @@ export default function RootLayout({
         </WalletProvider>
       </body>
     </html>
-  )
+  );
 }

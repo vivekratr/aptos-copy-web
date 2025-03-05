@@ -7,6 +7,7 @@ import Link from "next/link"
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
+      
       {/* Hero section */}
       <section className="hero-gradient text-white py-20 md:py-28">
         <div className="container px-4 md:px-6">

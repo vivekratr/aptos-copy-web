@@ -5,8 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* Update the link to your new logo URL */}
-          <link rel="icon" href="https://i.imgur.com/30dS9w2.png" type="image/png" />
+          {/* Update the link to use the local favicon.ico file */}
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
         <body>
           <Main />
