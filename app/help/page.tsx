@@ -109,5 +109,104 @@ export default function HelpPage() {
                       We prioritize security in several ways:
                     </p>
                     <ul className="list-disc pl-5 space-y-2">
-                      <li>\
+                      <li>Non-custodial platform: We never directly control your funds</li>
+                      <li>Smart contract audits: Our code is regularly audited by third-party security firms</li>
+                      <li>Insurance fund: Protection against unexpected market events</li>
+                      <li>Transparent operations: All transactions are visible on the Aptos blockchain</li>
+                      <li>Multi-signature requirements for critical operations</li>
+                    </ul>
+                    <p className="mt-2">
+                      While all trading involves risk, we implement industry-best security practices to protect your assets.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        
+        <TabsContent value="support" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Contact Support</CardTitle>
+              <CardDescription>
+                Our team is here to help with any questions or issues
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div className="grid gap-4">
+                  <h3 className="text-lg font-medium">Support Channels</h3>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-lg border p-4">
+                      <h4 className="font-medium mb-2">Live Chat</h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Available 24/7 for immediate assistance
+                      </p>
+                      <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                        <MessageSquare className="h-4 w-4 mr-2" />
+                        Start Chat
+                      </button>
+                    </div>
+                    <div className="rounded-lg border p-4">
+                      <h4 className="font-medium mb-2">Email Support</h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Response within 24 hours
+                      </p>
+                      <a href="mailto:support@aptoscopy.com" className="text-primary hover:underline">
+                        support@aptoscopy.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="grid gap-4">
+                  <h3 className="text-lg font-medium">FAQs & Resources</h3>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-lg border p-4">
+                      <h4 className="font-medium mb-2">Knowledge Base</h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Detailed guides and tutorials
+                      </p>
+                      <a href="/resources/knowledge-base" className="text-primary hover:underline">
+                        Browse Articles
+                      </a>
+                    </div>
+                    <div className="rounded-lg border p-4">
+                      <h4 className="font-medium mb-2">Video Tutorials</h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Step-by-step visual guides
+                      </p>
+                      <a href="/resources/tutorials" className="text-primary hover:underline">
+                        Watch Videos
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="rounded-lg border p-4">
+                  <h3 className="font-medium mb-2">Community Support</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Join our community channels for peer support and updates
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a href="https://discord.gg/aptoscopy" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                      Discord
+                    </a>
+                    <a href="https://t.me/aptoscopy" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                      Telegram
+                    </a>
+                    <a href="https://twitter.com/aptoscopy" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+                      Twitter
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  )
+}
 
